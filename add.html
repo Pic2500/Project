@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dodaj zaposlenika</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigacijski meni -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Dodaj zaposlenika</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Početna</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="add.html">Dodaj zaposlenika</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Šefovi</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <h2>Dodaj novog zaposlenika</h2>
+
+      <!-- Forma za unos zaposlenika -->
+      <form id="employeeForm">
+        <div class="mb-3">
+          <label class="form-label">Ime</label>
+          <input type="text" class="form-control" id="firstName" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Prezime</label>
+          <input type="text" class="form-control" id="lastName" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Adresa</label>
+          <input type="text" class="form-control" id="address" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Mobitel</label>
+          <input type="text" class="form-control" id="phone" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Spremi</button>
+      </form>
+    </div>
+
+    <!-- Tablica za prikaz zaposlenika -->
+    <div class="container mt-5">
+      <h2>Popis zaposlenika</h2>
+      <table class="table table-striped" id="employeeTable">
+        <thead>
+          <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Email</th>
+            <th>Adresa</th>
+            <th>Mobitel</th>
+            <th>Akcije</th>
+          </tr>
+        </thead>
+        <tbody id="employeeList">
+          <!-- Popis zaposlenika će se prikazivati ovdje -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Modal za potvrdu dodavanja -->
+    <div
+      class="modal fade"
+      id="addEmployeeModal"
+      tabindex="-1"
+      aria-labelledby="addEmployeeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addEmployeeModalLabel">
+              Zaposlenik uspješno dodan
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Zaposlenik je uspješno dodan u popis.</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              onclick="goToEmployeeList()"
+            >
+              Zatvori
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dodaj Bootstrap i jQuery skripte -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./scrpit.js"></script>
+  </body>
+</html>
